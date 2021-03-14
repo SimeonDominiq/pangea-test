@@ -1,0 +1,8 @@
+node_modules
+coverage
+build
+"assets"
+public
+app/config/env/config.*.js
+test/*
+__mocks__/*

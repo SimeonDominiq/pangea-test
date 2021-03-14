@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Router, Switch, Route } from 'react-router-dom';
+import { history } from 'libs/history';
+import routes from './routes';
+import ScrollTop from 'hoc/ScrollTop';
+import 'react-sliding-pane/dist/react-sliding-pane.css';
 
+const NotFound = () => 'Not Found';
+
+/**
+ * App
+ */
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <Router history={history}>
+            <ScrollTop>
+                <Switch>
+                    {routes()}
+                    <Route
+                        exact
+                        path="*"
+                        render={() => <NotFound />}
+                    />
+                </Switch>
+            </ScrollTop>
+        </Router>
+    );
 }
 
 export default App;

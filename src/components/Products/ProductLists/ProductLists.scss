@@ -1,0 +1,10 @@
+@import '~assets/styles/shared-styles.scss';
+
+.product {
+    margin-bottom: to-rem(100);
+
+    img {
+        height: to-rem(150);
+        width: to-rem(150);
+    }
+}

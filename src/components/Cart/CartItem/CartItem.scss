@@ -1,0 +1,19 @@
+@import '~assets/styles/shared-styles.scss';
+
+.cartItem {
+    .card-body {
+        position: relative;
+
+        svg {
+            cursor: pointer;
+            width: to-rem(8);
+            position: absolute;
+            right: to-rem(10);
+        }
+    }
+
+    img {
+        height: to-rem(40);
+        width: to-rem(40);
+    }
+}

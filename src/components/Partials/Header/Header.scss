@@ -1,0 +1,35 @@
+@import '~assets/styles/shared-styles.scss';
+
+.navbar {
+    border-bottom: to-rem(1) solid color(AthensGray);
+    a {
+        color: color(Black);
+    }
+
+    .navbar-brand {
+        @include breakpoint-mini('l') {
+            font-size: to-rem(30px);
+        }
+    }
+
+    .nav-item {
+        .nav-link {
+            color: color(Black);
+        }
+    }
+
+    .cart-icon {
+        position: relative;
+
+        img {
+            width: to-rem(20);
+            position: relative;
+        }
+
+        span {
+            position: absolute;
+            right: to-rem(-10);
+            top: to-rem(-12);
+        }
+    }
+}

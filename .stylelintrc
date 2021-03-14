@@ -1,0 +1,23 @@
+{
+    "extends": [
+        "stylelint-config-css-modules"
+    ],
+
+    "plugins": [
+        "stylelint-order",
+        "stylelint-scss"
+    ],
+
+    "rules": {
+        "indentation": 4,
+        "at-rule-no-unknown": null,
+
+        "order/properties-order": [
+            [
+                "composes", "include", "extends"
+            ], {
+                "unspecified": "bottomAlphabetical"
+            }
+        ]
+    }
+}

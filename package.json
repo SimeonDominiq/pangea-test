@@ -3,24 +3,53 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@apollo/react-hooks": "^3.1.2",
+    "apollo-cache-inmemory": "^1.6.3",
+    "apollo-client": "^2.6.4",
+    "apollo-link": "^1.2.13",
+    "apollo-link-context": "^1.0.20",
+    "apollo-link-http": "^1.5.16",
+    "apollo-server": "^2.9.6",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "bootstrap": "^4.5.2",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "jquery": "^3.5.1",
+    "node-sass": "^4.14.1",
+    "popper.js": "^1.16.1",
+    "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-dynamic-import": "^1.1.4",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
-    "web-vitals": "^1.0.1"
+    "react-sliding-pane": "^7.0.0",
+    "web-vitals": "^1.0.1",
+    "react-redux": "^7.2.1",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-persist": "^6.0.0",
+    "redux-thunk": "^2.3.0",
+    "graphql": "^14.5.8",
+    "graphql-tag": "^2.10.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "stylelint": "stylelint src/components/**/*.scss src/assets/styles/**/*.scss src/utils/**/*.scss",
+    "lint:all": "yarn run eslint && yarn run stylelint",
+    "lint:fix": "yarn run eslint --fix && yarn run stylelint --fix",
+    "fix": "yarn run lint:fix && yarn run lint:all",
+    "pre-push:script": "node bin/pre-push.js"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "plugin:prettier/recommended"
     ]
   },
   "browserslist": {
@@ -34,5 +63,47 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "stylelint --fix",
+      "git add"
+    ],
+    "*.scss": [
+      "git add"
+    ],
+    "*.{snap,json}": [
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn run pre-push:script"
+    }
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.4",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/preset-env": "^7.11.0",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-object-assign": "^6.22.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint-plugin-react": "^7.20.6",
+    "figlet": "^1.5.0",
+    "helmet": "^4.1.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.13",
+    "pre-commit": "^1.2.2",
+    "prettier": "^2.1.1",
+    "sass": "^1.26.10",
+    "sass-lint": "^1.13.1",
+    "sass-loader": "^10.0.1",
+    "stylelint": "^13.7.0",
+    "stylelint-config-css-modules": "^2.2.0",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-scss": "^3.18.0"
   }
 }

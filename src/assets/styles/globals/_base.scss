@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+}
+*:focus {
+    outline: 0;
+}
+
+html,
+body {
+    font-family: $global-font-family;
+    margin: 0;
+    padding: 0;
+    transition: color 0.3s ease-in-out;
+}
+
+body {
+    background-color: color(LightestGrey);
+    color: $body-font-color;
+    font-size: $body-font-size;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+}
+
+.hide {
+    display: none !important;
+}
+
+//links
+a {
+    color: inherit;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+// Reset images for responsive behavior
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+// Set vertical alignment for svg elements
+svg {
+    vertical-align: middle;
+}

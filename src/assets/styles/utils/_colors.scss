@@ -1,0 +1,26 @@
+// Colour names are gotten from the syle guide of the Design Mockup
+$palette: (
+    // Primary
+    ElectricViolet: #7e51ff,
+    White: #ffffff,
+    Black: #000000,
+    MineShaft: #262626,
+    Haiti: #1c1335,
+    VioletRed: #fa4a84,
+    Tolopea: #1b003b,
+    BaliHai: #8397ab,
+    BlackSqueeze: #f4f8fb,
+    AthensGray: #e0e2ec,
+    Whisper: #eeeff7,
+    GrayNurse: #e0e2e0,
+    GrayAsparagus: #4b5548
+);
+
+// A mixin to darken colors on hover
+@mixin hoverHandler($color) {
+    color: $color;
+
+    &:hover {
+        color: darken($color, 5%);
+    }
+}

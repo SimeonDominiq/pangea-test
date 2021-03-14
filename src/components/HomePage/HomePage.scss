@@ -1,0 +1,65 @@
+@import '~assets/styles/shared-styles.scss';
+
+.products-listing {
+    background: color(GrayNurse);
+}
+
+.slide-pane {
+    @include breakpoint-mini('l') {
+        width: 35% !important;
+    }
+}
+
+.slide-pane__header {
+    background: color(GrayNurse) !important;
+    border-bottom: 0px solid !important;
+}
+
+.slide-pane__content {
+    background: color(GrayNurse) !important;
+}
+
+.slide-pane__close {
+    border: to-rem(1) solid #ccc;
+    border-radius: 50%;
+    height: to-rem(30);
+    padding: unset !important;
+    text-align: center !important;
+    width: to-rem(30);
+
+    svg {
+        width: to-rem(8) !important;
+    }
+}
+
+.slide-pane__title {
+    text-align: center !important;
+}
+
+.cartList {
+    position: absolute;
+    overflow: auto;
+    height: calc(100% - 33%);
+    width: 90%;
+}
+
+.bottom-div {
+    bottom: 0;
+    border-top: to-rem(1) solid color(GrayAsparagus);
+    background: color(GrayNurse);
+    padding: to-rem(10 0);
+    position: absolute;
+    width: 90%;
+    z-index: 50;
+
+    .subscription {
+        span {
+            display: block;
+            border: to-rem(1) solid color(GrayAsparagus);
+            background: color(White);
+            padding: to-rem(15);
+            text-align: center;
+            text-transform: uppercase;
+        }
+    }
+}

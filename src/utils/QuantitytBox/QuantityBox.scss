@@ -1,0 +1,41 @@
+@import 'assets/styles/shared-styles.scss';
+
+.QuantityBox {
+    &Wrapper {
+        border: 1px solid #ccc;
+        position: relative;
+        z-index: 5;
+
+        button,
+        button:hover,
+        button:active {
+            height: to-rem(40);
+            width: to-rem(40);
+            outline: none;
+            box-shadow: none;
+            border: none;
+            background: color(White) !important;
+            font-size: 18px;
+        }
+
+        input {
+            height: to-rem(40);
+            background: color(White) !important;
+            border: 0px solid !important;
+            color: color(Dark);
+            font-weight: $font-weight-medium;
+            font-size: to-rem($font-size-18);
+
+            &:disabled {
+                background: color(White);
+            }
+        }
+
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    }
+}

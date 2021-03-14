@@ -1,0 +1,14 @@
+%button {
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: to-rem($font-size-14);
+    transition: .4s all ease;
+
+    &:active,
+    &:focus {
+        box-shadow: none;
+        outline: 0;
+    }
+}
